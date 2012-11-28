@@ -11,3 +11,13 @@
 *.lai
 *.la
 *.a
+
+# Vim tmp
+*.swp
+
+# qmake
+Makefile
+moc/*  
+obj/*
+Scanner3D
+
