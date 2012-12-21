@@ -5,20 +5,23 @@
 TEMPLATE = app
 TARGET = Scanner3D
 DEPENDPATH += . src
-INCLUDEPATH += . /usr/include/opencv2/
+INCLUDEPATH += . 
+INCLUDEPATH += /usr/include/opencv2/
+INCLUDEPATH += /usr/include/GL/
 QMAKE_LIBPATH += /usr/lib/
 
 # Linkage
 LIBS += -lopencv_core -lopencv_highgui -lopencv_features2d 
-LIBS += -lopencv_flann -lopencv_calib3d -lopencv_imgproc 
+LIBS += -lopencv_flann -lopencv_calib3d -lopencv_imgproc
 #LIBS += -lopencv_nonfree
+LIBS += -lGL -lGLU -lSDL
 
 # Input
 SOURCES += src/main.cpp
 
 # Options
-CONFIG += qt warn_on
-QMAKE_CXXFLAGS_DEBUG += -pg -g -ggdb
+CONFIG += qt warn_on debug
+QMAKE_CXXFLAGS_DEBUG += -g -ggdb
 
 # Compilation files
 MOC_DIR = ./moc
